@@ -29,7 +29,7 @@ Este proyecto es una API de autenticación creada con **NestJS**. Permite a los 
     ```bash
     npm install
     ```
-3. Crea un archivo .env con las variables de entorno necesarias, como la clave secreta de JWT y los detalles de la base de datos. Ejemplo:
+3. Crea un archivo `.env` con las variables de entorno necesarias, como la clave secreta de JWT y los detalles de la base de datos. Ejemplo:
     ```
       DB_TYPE=postgres
       DB_HOST=localhost
@@ -46,14 +46,14 @@ Este proyecto es una API de autenticación creada con **NestJS**. Permite a los 
     ```bash
       npm run start
     ```
-
-5. Accede a la documentación de Swagger en http://localhost:3000/api.
+    La api estará disponible en `http://localhost:3000`.
+5. Accede a la documentación de Swagger en `http://localhost:3000/api.`
 
 ## Endpoints Principales
 
 ### Registro de Usuarios
 
-* Ruta: POST /auth/register
+* Ruta: `POST /auth/register`
 * Descripción: Registra un nuevo usuario.
 * Body: 
     ```json
@@ -68,7 +68,7 @@ Este proyecto es una API de autenticación creada con **NestJS**. Permite a los 
 
 ### Inicio de Sesión
 
-* Ruta: POST /auth/login
+* Ruta: `POST /auth/login`
 * Descripción: Permite a un usuario registrado iniciar sesión.
 * Body: 
     ```json
