@@ -64,7 +64,7 @@ Este proyecto es una API de autenticación creada con **NestJS**. Permite a los 
         }
     ```
 * Respuesta: 
-  * 201 Created: usuario registrado correctamente.
+  * `201 Created`: usuario registrado correctamente.
 
 ### Inicio de Sesión
 
@@ -78,4 +78,4 @@ Este proyecto es una API de autenticación creada con **NestJS**. Permite a los 
         }
     ```
 * Respuesta: 
-  * 200 OK: devuelve un token de acceso JWT.
+  * `200 OK`: devuelve un token de acceso JWT.
