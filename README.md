@@ -136,5 +136,6 @@ Este proyecto es una API de autenticación y gestión de tareas creada con **Nes
 * Ruta: `POST /tasks/:id/complete`
 * Descripción: Marca una tarea como completada.
 * Respuesta: 
-  * `204 No Content`: tarea marcada como completada.
+  * `200 OK`: tarea marcada como completada.
+
 
