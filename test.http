@@ -3,7 +3,7 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-  "email": "usuario@example.com",
+  "email": "usuario4@example.com",
   "password": "password123",
   "name": "Nombre Usuario"
 }
@@ -13,6 +13,36 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-  "email": "usuario@example.com",
+  "email": "usuario4@example.com",
   "password": "password123"
 }
+
+### Crear una tarea
+POST http://localhost:3000/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMDc0NDc4NywiZXhwIjoxNzMwNzQ4Mzg3fQ.X83bAX7n-JOn5L9hfoovO1ECyZ74ZgARsXSsSeEHY5U
+Content-Type: application/json
+
+{
+  "title": "Nueva tarea de prueba"
+}
+
+### Listar todas las tareas del usuario
+GET http://localhost:3000/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImlhdCI6MTczMDc0NDYzMSwiZXhwIjoxNzMwNzQ4MjMxfQ.yGXKc7KOjLgYtPXs5oTzwfbtDVlCzdioXh9jWf09GRY
+
+### Actualizar una tarea (reemplaza `1` con el ID real de una tarea)
+PUT http://localhost:3000/tasks/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImlhdCI6MTczMDc0NDYzMSwiZXhwIjoxNzMwNzQ4MjMxfQ.yGXKc7KOjLgYtPXs5oTzwfbtDVlCzdioXh9jWf09GRY
+Content-Type: application/json
+
+{
+  "title": "Título actualizado de la tarea"
+}
+
+### Marcar una tarea como completada (reemplaza `1` con el ID real de una tarea)
+POST http://localhost:3000/tasks/4/complete
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImlhdCI6MTczMDc0NDYzMSwiZXhwIjoxNzMwNzQ4MjMxfQ.yGXKc7KOjLgYtPXs5oTzwfbtDVlCzdioXh9jWf09GRY
+
+### Eliminar una tarea (reemplaza `1` con el ID real de una tarea)
+DELETE http://localhost:3000/tasks/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImlhdCI6MTczMDc0NDYzMSwiZXhwIjoxNzMwNzQ4MjMxfQ.yGXKc7KOjLgYtPXs5oTzwfbtDVlCzdioXh9jWf09GRY

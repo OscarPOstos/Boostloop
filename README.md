@@ -1,13 +1,20 @@
 # API de Autenticación con NestJS
 
-Este proyecto es una API de autenticación creada con **NestJS**. Permite a los usuarios registrarse, iniciar sesión y cerrar sesión. Además, cuenta con una documentación integrada en **Swagger** para facilitar el uso y exploración de la API.
+Este proyecto es una API de autenticación y gestión de tareas creada con **NestJS**. Permite a los usuarios registrarse, iniciar sesión y cerrar sesión, así como gestionar tareas (listar, crear, actualizar, eliminar y completar tareas). Además, cuenta con una documentación integrada en **Swagger** para facilitar el uso y exploración de la API.
 
 ## Características
 
+### Autenticación
 - **Registro de usuarios:** permite a los nuevos usuarios registrarse de forma segura.
 - **Inicio de sesión:** los usuarios registrados pueden iniciar sesión y recibir un token de acceso JWT.
 - **Cierre de sesión:** permite invalidar el token de acceso.
-- **Swagger:** documentación en vivo de los endpoints de la API.
+
+### Gestión de Tareas
+- **Listar tareas:** permite a los usuarios listar todas sus tareas.
+- **Crear tarea:** permite a los usuarios crear nuevas tareas.
+- **Actualizar tarea:** permite a los usuarios actualizar detalles de una tarea existente.
+- **Eliminar tarea:** permite a los usuarios eliminar una tarea.
+- **Completar tarea:** permite a los usuarios marcar una tarea como completada.
 
 ## Tecnologías
 
@@ -79,3 +86,55 @@ Este proyecto es una API de autenticación creada con **NestJS**. Permite a los 
     ```
 * Respuesta: 
   * `200 OK`: devuelve un token de acceso JWT.
+
+### Tareas
+
+#### Listar tareas
+
+* Ruta: `GET /tasks`
+* Descripción: Listar todas las tareas del usuario autenticado.
+* Respuesta: 
+  * `200 OK`: devuelve una lista de tareas.
+
+#### Crear tareas
+
+* Ruta: `POST /tasks`
+* Descripción: Crea una nueva tarea para el usuario autenticado.
+* Body: 
+    ```json
+        {
+          "title": "Nueva tarea",
+          "description": "Descripción de la tarea"
+        }
+    ```
+* Respuesta: 
+  * `201 Created`: tarea creada correctamente.
+
+#### Actualizar tareas
+
+* Ruta: `PUT /tasks/:id`
+* Descripción: Actualiza una tarea existente.
+* Body: 
+    ```json
+        {
+          "title": "Título actualizado",
+          "description": "Descripción actualizada"
+        }
+    ```
+* Respuesta: 
+  * `200 OK`: tarea actualizada correctamente.
+
+#### Eliminar tarea
+
+* Ruta: `DELETE /tasks/:id`
+* Descripción: Elimina una tarea existente.
+* Respuesta: 
+  * `204 No Content`: tarea eliminada correctamente.
+
+#### Completar tarea
+
+* Ruta: `POST /tasks/:id/complete`
+* Descripción: Marca una tarea como completada.
+* Respuesta: 
+  * `204 No Content`: tarea marcada como completada.
+
