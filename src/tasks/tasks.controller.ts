@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards, Req } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { CreateTaskDto } from './dto/create-task.dto';
@@ -24,8 +24,9 @@ export class TasksController {
   @Post()
   @ApiOperation({ summary: 'Crear una nueva tarea' })
   @ApiResponse({ status: 201, description: 'Tarea creada', type: Task })
-  create(@Body() createTaskDto: CreateTaskDto) {
-    return this.tasksService.create(createTaskDto);
+  create(@Req() req, @Body() createTaskDto: CreateTaskDto) {
+    const userId = req.user.userId;
+    return this.tasksService.create(createTaskDto, userId);
   }
 
   @UseGuards(JwtAuthGuard)

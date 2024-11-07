@@ -19,7 +19,7 @@ Content-Type: application/json
 
 ### Crear una tarea
 POST http://localhost:3000/tasks
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMDc0NDc4NywiZXhwIjoxNzMwNzQ4Mzg3fQ.X83bAX7n-JOn5L9hfoovO1ECyZ74ZgARsXSsSeEHY5U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTAwMjA0OCwiZXhwIjoxNzMxMDA1NjQ4fQ.3gC3w2EErPGpveZR8Cmn8hvyXywnKgvqWrfPIYTnKnE
 Content-Type: application/json
 
 {
@@ -28,10 +28,10 @@ Content-Type: application/json
 
 ### Listar todas las tareas del usuario
 GET http://localhost:3000/tasks
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImlhdCI6MTczMDc0NDYzMSwiZXhwIjoxNzMwNzQ4MjMxfQ.yGXKc7KOjLgYtPXs5oTzwfbtDVlCzdioXh9jWf09GRY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTAwMjA0OCwiZXhwIjoxNzMxMDA1NjQ4fQ.3gC3w2EErPGpveZR8Cmn8hvyXywnKgvqWrfPIYTnKnE
 
 ### Actualizar una tarea (reemplaza `1` con el ID real de una tarea)
-PUT http://localhost:3000/tasks/4
+PUT http://localhost:3000/tasks/5
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImlhdCI6MTczMDc0NDYzMSwiZXhwIjoxNzMwNzQ4MjMxfQ.yGXKc7KOjLgYtPXs5oTzwfbtDVlCzdioXh9jWf09GRY
 Content-Type: application/json
 
@@ -44,5 +44,27 @@ POST http://localhost:3000/tasks/4/complete
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImlhdCI6MTczMDc0NDYzMSwiZXhwIjoxNzMwNzQ4MjMxfQ.yGXKc7KOjLgYtPXs5oTzwfbtDVlCzdioXh9jWf09GRY
 
 ### Eliminar una tarea (reemplaza `1` con el ID real de una tarea)
-DELETE http://localhost:3000/tasks/3
+DELETE http://localhost:3000/tasks/4
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImlhdCI6MTczMDc0NDYzMSwiZXhwIjoxNzMwNzQ4MjMxfQ.yGXKc7KOjLgYtPXs5oTzwfbtDVlCzdioXh9jWf09GRY
+
+### 1. Iniciar el registro de tiempo para una tarea específica
+POST http://localhost:3000/time-tracking/start
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTAwMjA0OCwiZXhwIjoxNzMxMDA1NjQ4fQ.3gC3w2EErPGpveZR8Cmn8hvyXywnKgvqWrfPIYTnKnE
+Content-Type: application/json
+
+{
+  "taskId": "7"
+}
+
+### 2. Detener el registro de tiempo de una tarea
+POST http://localhost:3000/time-tracking/stop
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTAwMjA0OCwiZXhwIjoxNzMxMDA1NjQ4fQ.3gC3w2EErPGpveZR8Cmn8hvyXywnKgvqWrfPIYTnKnE
+Content-Type: application/json
+
+{
+  "sessionId": "81b9a821-c5fc-4c58-aed4-5e8c3c8fca2f"
+}
+
+### 3. Obtener todas las sesiones de trabajo del usuario autenticado
+GET http://localhost:3000/time-tracking/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTAwMjA0OCwiZXhwIjoxNzMxMDA1NjQ4fQ.3gC3w2EErPGpveZR8Cmn8hvyXywnKgvqWrfPIYTnKnE

@@ -16,6 +16,11 @@ Este proyecto es una API de autenticación y gestión de tareas creada con **Nes
 - **Eliminar tarea:** permite a los usuarios eliminar una tarea.
 - **Completar tarea:** permite a los usuarios marcar una tarea como completada.
 
+### Time Tracking (Seguimiento de Tiempo)
+- **Iniciar seguimiento:** permite a los usuarios iniciar una sesión de tiempo para una tarea específica.
+- **Detener seguimiento:** permite a los usuarios detener la sesión de tiempo en curso para una tarea.
+- **Obtener sesiones:** permite a los usuarios obtener una lista de todas sus sesiones de trabajo, con detalles sobre el tiempo dedicado a cada tarea.
+
 ## Tecnologías
 
 - **NestJS**: framework para construir aplicaciones escalables de backend en Node.js.
@@ -137,5 +142,66 @@ Este proyecto es una API de autenticación y gestión de tareas creada con **Nes
 * Descripción: Marca una tarea como completada.
 * Respuesta: 
   * `200 OK`: tarea marcada como completada.
+
+### Time Tracking (Seguimiento de Tiempo)
+
+#### Iniciar Seguimiento de Tiempo
+* Ruta: `POST /time-tracking/start`
+* Descripción: Inicia una sesión de tiempo para una tarea específica.
+* Body:
+      ```json
+      {
+        "taskId": "a12f3e4d-5678-49bc-a5a6-e2f9d5bf4c3d"
+      }
+      ```
+* Respuesta:
+  * `201 Created`: sesión de tiempo iniciada correctamente.
+  * Ejemplo de respuesta:
+      ```json
+      {
+        "sessionId": "b34c5d6e-7890-41de-b7c6-f4f9e8ad7d1e",
+        "taskId": "a12f3e4d-5678-49bc-a5a6-e2f9d5bf4c3d",
+        "startTime": "2023-11-03T15:00:00.000Z"
+      }
+      ```
+
+#### Detener Seguimiento de Tiempo
+* Ruta: `POST /time-tracking/stop`
+* Descripción: Detiene una sesión de tiempo en curso.
+* Body:
+      ```json
+      {
+        "sessionId": "b34c5d6e-7890-41de-b7c6-f4f9e8ad7d1e"
+      }
+      ```
+* Respuesta:
+  * `200 OK`: sesión de tiempo detenida correctamente.
+  * Ejemplo de respuesta:
+      ```json
+      {
+        "sessionId": "b34c5d6e-7890-41de-b7c6-f4f9e8ad7d1e",
+        "taskId": "a12f3e4d-5678-49bc-a5a6-e2f9d5bf4c3d",
+        "startTime": "2023-11-03T15:00:00.000Z",
+        "endTime": "2023-11-03T16:00:00.000Z",
+        "duration": "1 hour"
+      }
+      ```
+#### Detener Seguimiento de Tiempo
+* Ruta: `POST /time-tracking`
+* Descripción: Obtiene todas las sesiones de tiempo del usuario autenticado.
+* Respuesta:
+  * `200 OK`: devuelve una lista de sesiones de trabajo.
+  * Ejemplo de respuesta:
+      ```json
+      [
+        {
+          "sessionId": "b34c5d6e-7890-41de-b7c6-f4f9e8ad7d1e",
+          "taskId": "a12f3e4d-5678-49bc-a5a6-e2f9d5bf4c3d",
+          "startTime": "2023-11-03T15:00:00.000Z",
+          "endTime": "2023-11-03T16:00:00.000Z",
+          "duration": "1 hour"
+        }
+      ]
+      ```
 
 

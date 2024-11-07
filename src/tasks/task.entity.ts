@@ -1,5 +1,6 @@
+import { TimeTracking } from 'src/time-tracking/time-tracking.entity';
 import { User } from 'src/user/user.entity';
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
 
 @Entity()
 export class Task {
@@ -17,4 +18,7 @@ export class Task {
 
   @ManyToOne(() => User, (user) => user.tasks, { onDelete: 'CASCADE' })
   user: User;
+  
+  @OneToMany(() => TimeTracking, timeTracking => timeTracking.task)
+  timeTracking: TimeTracking[]; 
 }

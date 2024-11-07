@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { Task } from '../tasks/task.entity';
+import { TimeTracking } from 'src/time-tracking/time-tracking.entity';
 
 @Entity()
 export class User {
@@ -17,4 +18,7 @@ export class User {
 
   @OneToMany(() => Task, (task) => task.user)
   tasks: Task[];
+    
+  @OneToMany(() => TimeTracking, timeTracking => timeTracking.user)
+  timeTracking: TimeTracking[]; 
 }

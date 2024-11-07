@@ -4,6 +4,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { TasksModule } from './tasks/tasks.module';
+import { TimeTrackingModule } from './time-tracking/time-tracking.module';
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { TasksModule } from './tasks/tasks.module';
         autoLoadEntities: true,
         synchronize: configService.get<boolean>('DB_SYNCHRONIZE'), // false en producción
       }),
-    }),UserModule, AuthModule, TasksModule
+    }),UserModule, AuthModule, TasksModule, TimeTrackingModule
   ],
 })
 export class AppModule {}

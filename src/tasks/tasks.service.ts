@@ -16,8 +16,11 @@ export class TasksService {
     return this.tasksRepository.find();
   }
 
-  async create(createTaskDto: CreateTaskDto): Promise<Task> {
-    const newTask = this.tasksRepository.create(createTaskDto);
+  async create(createTaskDto: CreateTaskDto, userId: number): Promise<Task> {
+    const newTask = this.tasksRepository.create({
+      ...createTaskDto,
+      user: { id: userId }, // Relacionamos la tarea con el usuario
+    });
     return this.tasksRepository.save(newTask);
   }
 
