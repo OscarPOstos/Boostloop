@@ -1,6 +1,6 @@
 # API de Autenticación con NestJS
 
-Este proyecto es una API de autenticación y gestión de tareas creada con **NestJS**. Permite a los usuarios registrarse, iniciar sesión y cerrar sesión, así como gestionar tareas (listar, crear, actualizar, eliminar y completar tareas). Además, cuenta con una documentación integrada en **Swagger** para facilitar el uso y exploración de la API.
+Este proyecto es una API creada con **NestJS** que permite la autenticación de usuarios, gestión de tareas, y un sistema de seguimiento de tiempo para tareas. Los usuarios pueden registrarse, iniciar sesión y administrar sus tareas (listar, crear, actualizar, eliminar y completar). Además, cuenta con un sistema de **Time Tracking** para iniciar y detener sesiones de trabajo. La documentación de **Swagger** facilita el uso y exploración de la API.
 
 ## Características
 
