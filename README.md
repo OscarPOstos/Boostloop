@@ -27,7 +27,7 @@ Este proyecto es una API creada con **NestJS** que permite la autenticación de 
 - **JWT**: autenticación basada en tokens para proteger los endpoints.
 - **bcrypt**: hashing de contraseñas para almacenar credenciales de manera segura.
 - **Swagger**: documentación automática y exploración de la API.
-- **TypeORM o Prisma**: ORM para la gestión de la base de datos (elegir según preferencia).
+- **TypeORM**: ORM para la gestión de la base de datos.
 - **Passport.js**: integración de estrategias de autenticación.
 
 ## Instalación
