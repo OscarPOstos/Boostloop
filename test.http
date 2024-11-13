@@ -68,3 +68,16 @@ Content-Type: application/json
 ### 3. Obtener todas las sesiones de trabajo del usuario autenticado
 GET http://localhost:3000/time-tracking/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTAwMjA0OCwiZXhwIjoxNzMxMDA1NjQ4fQ.3gC3w2EErPGpveZR8Cmn8hvyXywnKgvqWrfPIYTnKnE
+
+
+### Obtener Estadísticas Diarias
+GET http://localhost:3000/statistics/daily
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTUyNTg5NiwiZXhwIjoxNzMxNTI5NDk2fQ.0PP26bqmvFfg5m2d0ZS7aY7THfjGIuxfrC-fxVXjgBE
+Accept: application/json
+
+###
+
+### Obtener Estadísticas Semanales
+GET http://localhost:3000/statistics/weekly
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTUyNTg5NiwiZXhwIjoxNzMxNTI5NDk2fQ.0PP26bqmvFfg5m2d0ZS7aY7THfjGIuxfrC-fxVXjgBE
+Accept: application/json

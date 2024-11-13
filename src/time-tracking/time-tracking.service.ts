@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Between, Repository } from 'typeorm';
 import { TimeTracking } from './time-tracking.entity';
 import { StartTrackingDto } from './dto/start-tracking.dto';
 import { StopTrackingDto } from './dto/stop-tracking.dto';
@@ -48,6 +48,15 @@ export class TimeTrackingService {
     return this.timeTrackingRepository.find({
       where: { user: { id: parseInt(userId) } },
       relations: ['task'],
+    });
+  }
+
+  async getSessionsForPeriod(userId: string, startDate: Date, endDate: Date): Promise<TimeTracking[]> {
+    return this.timeTrackingRepository.find({
+      where: {
+        user: { id: parseInt(userId) },
+        startTime: Between(startDate, endDate),
+      },
     });
   }
 }

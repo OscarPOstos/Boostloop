@@ -204,4 +204,36 @@ Este proyecto es una API creada con **NestJS** que permite la autenticación de 
       ]
       ```
 
+### Estadísticas de Productividad
+
+#### Obtener Estadísticas Diarias
+
+* Ruta: `GET /statistics/daily`
+* Descripción: Obtiene estadísticas de productividad para el día actual.
+* Respuesta:
+  * `200 OK`: devuelve el total de horas trabajadas y el número de sesiones.
+  * Ejemplo de respuesta:
+    ```json
+    {
+      "date": "2023-11-03",
+      "totalHours": 5,
+      "sessionsCount": 3
+    }
+    ```
+
+#### Obtener Estadísticas Semanales
+
+* Ruta: `GET /statistics/weekly`
+* Descripción: Obtiene estadísticas de productividad para la semana actual.
+* Respuesta:
+  * `200 OK`: devuelve el total de horas trabajadas y el número de sesiones.
+  * Ejemplo de respuesta:
+    ```json
+    {
+      "week": "2023-10-30 - 2023-11-05",
+      "totalHours": 20,
+      "sessionsCount": 10
+    }
+    ```
+
 

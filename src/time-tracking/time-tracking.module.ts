@@ -9,5 +9,6 @@ import { Task } from 'src/tasks/task.entity';
   imports: [TypeOrmModule.forFeature([TimeTracking, Task])],
   providers: [TimeTrackingService],
   controllers: [TimeTrackingController],
+  exports: [TimeTrackingService]
 })
 export class TimeTrackingModule {}
