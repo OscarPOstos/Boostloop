@@ -49,7 +49,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImlhdCI6M
 
 ### 1. Iniciar el registro de tiempo para una tarea específica
 POST http://localhost:3000/time-tracking/start
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTAwMjA0OCwiZXhwIjoxNzMxMDA1NjQ4fQ.3gC3w2EErPGpveZR8Cmn8hvyXywnKgvqWrfPIYTnKnE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTUyNTg5NiwiZXhwIjoxNzMxNTI5NDk2fQ.0PP26bqmvFfg5m2d0ZS7aY7THfjGIuxfrC-fxVXjgBE
 Content-Type: application/json
 
 {
@@ -58,11 +58,11 @@ Content-Type: application/json
 
 ### 2. Detener el registro de tiempo de una tarea
 POST http://localhost:3000/time-tracking/stop
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTAwMjA0OCwiZXhwIjoxNzMxMDA1NjQ4fQ.3gC3w2EErPGpveZR8Cmn8hvyXywnKgvqWrfPIYTnKnE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTUyNTg5NiwiZXhwIjoxNzMxNTI5NDk2fQ.0PP26bqmvFfg5m2d0ZS7aY7THfjGIuxfrC-fxVXjgBE
 Content-Type: application/json
 
 {
-  "sessionId": "81b9a821-c5fc-4c58-aed4-5e8c3c8fca2f"
+  "sessionId": "482778ea-3fa2-4ede-8853-5e88f7d4d484"
 }
 
 ### 3. Obtener todas las sesiones de trabajo del usuario autenticado

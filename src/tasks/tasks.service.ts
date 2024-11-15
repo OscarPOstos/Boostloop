@@ -55,4 +55,10 @@ export class TasksService {
     task.completed = true;
     return this.tasksRepository.save(task);
   }
+
+  async findIncompleteTasks(userId: string): Promise<Task[]> {
+    return this.tasksRepository.find({
+      where: { user: { id: parseInt(userId) }, completed: false },
+    });
+  }
 }

@@ -236,4 +236,21 @@ Este proyecto es una API creada con **NestJS** que permite la autenticación de 
     }
     ```
 
+### Recomendaciones
+
+#### Obtener Recomendaciones Personalizadas
+
+* Ruta: `GET /recommendations`
+* Descripción: Devuelve recomendaciones personalizadas basadas en los hábitos del usuario.
+* Respuesta:
+  * `200 OK`: devuelve una lista de recomendaciones.
+  * Ejemplo de respuesta:
+    ```json
+    [
+      "Comienza una nueva sesión de trabajo para mantener tu productividad.",
+      "Intenta dedicar al menos 1 hora diaria para alcanzar tus metas.",
+      "Tienes 3 tareas pendientes. Prioriza las más importantes."
+    ]
+    ```
+
 
