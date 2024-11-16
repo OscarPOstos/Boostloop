@@ -7,6 +7,7 @@ import { TasksModule } from './tasks/tasks.module';
 import { TimeTrackingModule } from './time-tracking/time-tracking.module';
 import { StatisticsModule } from './statistics/statistics.module';
 import { RecommendationsModule } from './recommendations/recommendations.module';
+import { GamificationModule } from './gamification/gamification.module';
 
 @Module({
   imports: [
@@ -27,7 +28,7 @@ import { RecommendationsModule } from './recommendations/recommendations.module'
         autoLoadEntities: true,
         synchronize: configService.get<boolean>('DB_SYNCHRONIZE'), // false en producción
       }),
-    }),UserModule, AuthModule, TasksModule, TimeTrackingModule, StatisticsModule, RecommendationsModule
+    }),UserModule, AuthModule, TasksModule, TimeTrackingModule, StatisticsModule, RecommendationsModule, GamificationModule
   ],
 })
 export class AppModule {}

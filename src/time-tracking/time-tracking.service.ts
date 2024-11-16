@@ -70,4 +70,9 @@ export class TimeTrackingService {
       },
     });
   }
+
+  async getTotalDuration(userId: string): Promise<number> {
+    const sessions = await this.timeTrackingRepository.find({ where: { user: { id: parseInt(userId) } } });
+    return sessions.reduce((total, session) => total + session.duration, 0);
+  }
 }

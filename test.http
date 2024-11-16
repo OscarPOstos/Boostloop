@@ -79,5 +79,10 @@ Accept: application/json
 
 ### Obtener Estadísticas Semanales
 GET http://localhost:3000/statistics/weekly
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTUyNTg5NiwiZXhwIjoxNzMxNTI5NDk2fQ.0PP26bqmvFfg5m2d0ZS7aY7THfjGIuxfrC-fxVXjgBE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTY5MTMyMywiZXhwIjoxNzMxNjk0OTIzfQ.H6TcQ_V__oKIIJtonPeohS2XMB4JRZIkvju_tTVZlGk
+Accept: application/json
+
+### Obtener Recomendaciones
+GET http://localhost:3000/recommendations
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTY5MTMyMywiZXhwIjoxNzMxNjk0OTIzfQ.H6TcQ_V__oKIIJtonPeohS2XMB4JRZIkvju_tTVZlGk
 Accept: application/json

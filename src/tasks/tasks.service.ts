@@ -61,4 +61,10 @@ export class TasksService {
       where: { user: { id: parseInt(userId) }, completed: false },
     });
   }
+
+  async findCompletedTasks(userId: string): Promise<Task[]> {
+    return this.tasksRepository.find({
+      where: { user: { id: parseInt(userId) }, completed: true },
+    });
+  }
 }
