@@ -84,5 +84,15 @@ Accept: application/json
 
 ### Obtener Recomendaciones
 GET http://localhost:3000/recommendations
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTY5MTMyMywiZXhwIjoxNzMxNjk0OTIzfQ.H6TcQ_V__oKIIJtonPeohS2XMB4JRZIkvju_tTVZlGk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTc3MzI2OCwiZXhwIjoxNzMxNzc2ODY4fQ.-FrAqICrfLiwDkPyKmJnPJdhZO2AjQsrzlMtntBNslo
+Accept: application/json
+
+### Obtener Puntaje del usuario
+GET http://localhost:3000/gamification/points
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTc3MzI2OCwiZXhwIjoxNzMxNzc2ODY4fQ.-FrAqICrfLiwDkPyKmJnPJdhZO2AjQsrzlMtntBNslo
+Accept: application/json
+
+### Obtener medallas
+GET http://localhost:3000/gamification/badges
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsImlhdCI6MTczMTc3MzI2OCwiZXhwIjoxNzMxNzc2ODY4fQ.-FrAqICrfLiwDkPyKmJnPJdhZO2AjQsrzlMtntBNslo
 Accept: application/json

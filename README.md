@@ -253,4 +253,47 @@ Este proyecto es una API creada con **NestJS** que permite la autenticación de 
     ]
     ```
 
+### Gamificación
+
+#### Ver Puntos del Usuario
+
+* Ruta: `GET /gamification/points`
+* Descripción: Devuelve el total de puntos acumulados por el usuario.
+* Respuesta:
+  * `200 OK`: devuelve el total de puntos.
+  * Ejemplo de respuesta:
+    ```json
+    { "points": 75 }
+    ```
+
+#### Ver Medallas del Usuario
+
+* Ruta: `GET /gamification/badges`
+* Descripción: Devuelve las medallas o logros obtenidos por el usuario.
+* Respuesta:
+  * `200 OK`: devuelve una lista de medallas.
+  * Ejemplo de respuesta:
+    ```json
+    { "badges": ["Buen Comienzo", "Maestro del Tiempo"] }
+    ```
+
+### Sincronización con Google Calendar
+
+#### Sincronizar con Google Calendar
+
+* Ruta: `POST /calendar-sync/google-sync`
+* Descripción: Sincroniza las tareas del usuario con Google Calendar.
+* Body:
+  ```json
+  {
+    "googleAccessToken": "ya29.a0Ae6..."
+  }```
+* Respuesta:
+  * `200 OK`: Sincronización exitosa con Google Calendar.
+  * Ejemplo de respuesta:
+    ```json
+    { "message": "Sincronización exitosa con Google Calendar" }
+    ```
+
+
 

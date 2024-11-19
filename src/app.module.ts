@@ -8,6 +8,7 @@ import { TimeTrackingModule } from './time-tracking/time-tracking.module';
 import { StatisticsModule } from './statistics/statistics.module';
 import { RecommendationsModule } from './recommendations/recommendations.module';
 import { GamificationModule } from './gamification/gamification.module';
+import { CalendarSyncModule } from './calendar-sync/calendar-sync.module';
 
 @Module({
   imports: [
@@ -28,7 +29,7 @@ import { GamificationModule } from './gamification/gamification.module';
         autoLoadEntities: true,
         synchronize: configService.get<boolean>('DB_SYNCHRONIZE'), // false en producción
       }),
-    }),UserModule, AuthModule, TasksModule, TimeTrackingModule, StatisticsModule, RecommendationsModule, GamificationModule
+    }),UserModule, AuthModule, TasksModule, TimeTrackingModule, StatisticsModule, RecommendationsModule, GamificationModule, CalendarSyncModule
   ],
 })
 export class AppModule {}
