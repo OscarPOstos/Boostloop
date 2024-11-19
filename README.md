@@ -287,7 +287,7 @@ Este proyecto es una API creada con **NestJS** que permite la autenticación de 
   ```json
   {
     "googleAccessToken": "ya29.a0Ae6..."
-  }```
+  }
 * Respuesta:
   * `200 OK`: Sincronización exitosa con Google Calendar.
   * Ejemplo de respuesta:
